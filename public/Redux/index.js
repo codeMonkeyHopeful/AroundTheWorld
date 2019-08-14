@@ -4,11 +4,12 @@ import thunk from 'redux-thunk';
 
 //action creators
 
+const GOT_USER_IP = 'GOT_USER_IP'
 
 
 //action triggers
 
-
+//create Thunks if needed
 
 //initial state
 
