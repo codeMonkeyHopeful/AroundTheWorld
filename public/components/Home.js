@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {updateUserIP} from '../Redux/index.js'
-
+import storetemp from '../Redux/index.js'
 
 class Home extends Component {
 
