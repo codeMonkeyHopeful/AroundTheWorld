@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import {updateUserIP} from '../Redux/index.js'
 
 
 class Home extends Component {
 
-storeIP = (ip) => {
-        console.log('testing')
-    }
-    
+    storeIP = (event) => {
+      event.preventDefault()
+      this.props.updateIP(event.target.ip.value)
+
+        }
 
   render() {
     return (
@@ -16,18 +17,23 @@ storeIP = (ip) => {
             <center>
               <form onSubmit={this.storeIP}>
          IP Address: 
-            <input type = "text" name = "first_name" maxlength = "100" placeholder='Enter Your IP Here' />
+                <input type = "text" name ='ip' id = "ip"  placeholder='Enter Your IP Here' />
          <br />
-         <input type = "submit" />
-      </form>
-      </center>
+                <button type = "submit">Give me your info</button>
+             </form>
+            </center>
         </div>
     );
   }
+
+
 }
 
-const mapDispatch = dispatch => ({
-});
+const mapDispatch = dispatch => (
+  {
+    updateIP: (ip) => dispatch(updateUserIP(ip))
+}
+);
 
 const mapState= state => ({
 });

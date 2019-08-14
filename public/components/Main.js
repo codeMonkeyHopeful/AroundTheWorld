@@ -5,7 +5,6 @@ import store from '../Redux/index';
 import AppRouter from './AppRouter'
 
 class Main extends Component {
-
   //set up the provider to allow all components to use the store
   render() {
     return (
