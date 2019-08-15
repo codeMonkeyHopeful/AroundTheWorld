@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-//console.log(process.env.IP_STACK_API)
+console.log(process.env.IP_STACK_API)
 
 const app = express();
 const PORT = process.env.PORT;
