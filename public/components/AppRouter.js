@@ -9,14 +9,15 @@ import {
 import axios from 'axios';
 
 import Home from './Home'
+import Dashboard from './Dashboard'
 
 const AppRouter = props => {
     return (
       <div id="main-container">
         <Router>
-          {/* <Header /> */}
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/dashboard" component={Dashboard} />
             <Redirect to="/error" />
           </Switch>
         </Router>
