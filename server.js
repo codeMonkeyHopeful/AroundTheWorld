@@ -14,6 +14,13 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/components/index.html'));
 });
 
+app.get('/api1', (req, res, next)=>{
+  res.json(process.env.IP_STACK_API)
+})
+
+app.get('/api2', (req, res, next)=>{
+  res.json(process.env.NASA_API)
+})
 
 app.listen(PORT, () => {
   console.log(
