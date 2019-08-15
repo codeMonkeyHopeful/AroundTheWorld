@@ -11,6 +11,10 @@ class Dashboard extends Component {
     .then(res => this.props.updateLocationInfo(res.data))
     .catch(e=> console.log(e))
 
+    imageInfo = Axios.get(`http://api.ipstack.com/${this.props.ip}?access_key=fafbee55e815cc083f5391158fcc3ddf`)
+    .then(res => this.props.updateLocationInfo(res.data))
+    .catch(e=> console.log(e))
+
   render() {
     return (
         <div>
