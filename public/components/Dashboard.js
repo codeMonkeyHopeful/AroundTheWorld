@@ -22,7 +22,8 @@ class Dashboard extends Component {
   render() {
     return (
         <div>
-            {this.props.location.longitude}
+            
+            You Are Here: <img src={this.props.image.url}/>
         </div>
     )
 
