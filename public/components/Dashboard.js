@@ -17,13 +17,6 @@ class Dashboard extends Component {
     .then(info=> this.props.updateImageInfo(info.data))
     .catch(e=> console.log(e))
 
-
-    
-    //Pull NASA info
-    // ipInfo = 
-    // .then(res=> Axios.get(`https://api.nasa.gov/planetary/earth/imagery/?lon=100.75&lat=1.5&date=2016-08-01&cloud_score=False&api_key=DEMO_KEY`))
-    // .then(info=> this.props.updateImageInfo(info.data))
-
   render() {
     return (
         <div>
