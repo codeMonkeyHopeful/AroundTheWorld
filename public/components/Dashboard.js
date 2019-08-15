@@ -6,10 +6,9 @@ import {updateUserLocation} from '../Redux/index'
 
 class Dashboard extends Component {
 
-    //Pull in the location information via IP to power the second API
-    ipInfo = Axios.get(`http://api.ipstack.com/${this.props.ip}?access_key=fafbee55e815cc083f5391158fcc3ddf`)
-    .then(res => this.props.updateLocationInfo(res.data))
-    .catch(e=> console.log(e))
+    ipInfo = Axios.get('/api1')
+    .then(res=> Axios.get(`http://api.ipstack.com/${this.props.ip}?access_key=${res.data}`))
+    .then(info=> this.props.updateLocationInfo(info.data))
 
     imageInfo = Axios.get(`http://api.ipstack.com/${this.props.ip}?access_key=fafbee55e815cc083f5391158fcc3ddf`)
     .then(res => this.props.updateLocationInfo(res.data))
