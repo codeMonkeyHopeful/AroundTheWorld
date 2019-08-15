@@ -8,7 +8,8 @@ import {updateUserLocation, updateUserImage} from '../Redux/index'
 class Dashboard extends Component {
 
     //Pull IP info
-    ipInfo = Axios.get('/api1')
+    componentDidMount() {
+    const ipInfo = Axios.get('/api1')
     .then(res=> Axios.get(`http://api.ipstack.com/${this.props.ip}?access_key=${res.data}`))
     .then(info=> this.props.updateLocationInfo(info.data))
     .then(Axios.get('/api2'))
@@ -16,16 +17,19 @@ class Dashboard extends Component {
     //need to look into why /api2 isn't working
     .then(info=> this.props.updateImageInfo(info.data))
     .catch(e=> console.log(e))
+    }
 
   render() {
     return (
         <div>
-            this is working
+            {this.props.location.longitude}
         </div>
-    );
-  }
+    )
+
+  
 
 
+}
 }
 
 const mapDispatch = dispatch => (
