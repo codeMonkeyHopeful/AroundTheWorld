@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {updateUserIP} from '../Redux/index.js'
+import Axios from 'axios';
 
 class Home extends Component {
+
 
     storeIP = (event) => {
       event.preventDefault()
@@ -11,15 +13,20 @@ class Home extends Component {
 
         }
 
+        componentDidMount(){
+          Axios.get('https://ipapi.co/json/') //pull users IP automatically and store on state
+          .then(res => this.props.updateIP(res.data))
+        }
+
   render() {
     return (
         <div>
             <center>
               <form onSubmit={this.storeIP}>
          IP Address: 
-                <input type = "text" name ='ip' id = "ip"  placeholder='Enter Your IP Here' />
+                <input type = "text" name ='ip' id = "ip"  value={this.props.ip}  />
          <br />
-                <button type = "submit">Give Me Your Info</button>
+                <button type = "submit">Show Me More!</button>
              </form>
             </center>
         </div>
@@ -36,6 +43,7 @@ const mapDispatch = dispatch => (
 );
 
 const mapState= state => ({
+  ip: state.ip.ip
 });
 
 export default connect(
