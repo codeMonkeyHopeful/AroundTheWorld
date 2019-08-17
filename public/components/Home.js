@@ -21,16 +21,21 @@ class Home extends Component {
   render() {
     return (
         <div>
-          <center>
-          <span>Location Finder</span>
-          </center>
             <center>
+              <div id='form-container'>
+          <strong><span id='title'>Location Finder</span></strong>
               <form onSubmit={this.storeIP}>
          Your IP Address: 
                 <input type = "text" name ='ip' id = "ip"  value={this.props.ip}  />
          <br />
                 <button type = "submit">Show Me More!</button>
              </form>
+             <p>'Location Finder' is a handful of compnents that can be integrated 
+                into your website, capturing the users IP on visit, pulling location information
+                and storing for later use.
+                </p>
+                <strong><p>Use responsibly</p></strong>
+                </div>
             </center>
         </div>
     );

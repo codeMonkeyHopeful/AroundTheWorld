@@ -25,7 +25,7 @@ class Dashboard extends Component {
         boarderStyle: 'solid'
       }
     return (
-
+<div>
         <table>
 
       <tbody>
@@ -62,7 +62,13 @@ class Dashboard extends Component {
     <td>{this.props.location.ip}</td>
   </tr>
 </tbody> 
+
             </table>
+            <center><span>
+<strong>*All images provided by NASA satelite services</strong>
+</span>
+</center>
+    </div>
     )
 
   
