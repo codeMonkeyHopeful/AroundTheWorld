@@ -21,9 +21,12 @@ class Home extends Component {
   render() {
     return (
         <div>
+          <center>
+          <span>Location Finder</span>
+          </center>
             <center>
               <form onSubmit={this.storeIP}>
-         IP Address: 
+         Your IP Address: 
                 <input type = "text" name ='ip' id = "ip"  value={this.props.ip}  />
          <br />
                 <button type = "submit">Show Me More!</button>

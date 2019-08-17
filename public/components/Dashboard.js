@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Axios from 'axios';
 import {updateUserLocation, updateUserImage} from '../Redux/index'
+import { SSL_OP_SINGLE_DH_USE } from 'constants';
 
 
 
@@ -20,11 +21,48 @@ class Dashboard extends Component {
     }
 
   render() {
+      const test ={
+        boarderStyle: 'solid'
+      }
     return (
-        <div>
-            
-            You Are Here: <img src={this.props.image.url}/>
-        </div>
+
+        <table>
+
+      <tbody>
+  <tr>
+    <th>You Are Here</th>
+    <td><a href={this.props.image.url}><img src={this.props.image.url}/></a></td>
+</tr>
+<tr>
+    <th style={test}>Latitude</th>
+    <td>{this.props.location.latitude}</td>
+</tr>
+<tr>
+    <th>Longitude</th>
+    <td>{this.props.location.longitude}</td>
+    </tr>
+<tr>
+    <th>City</th>
+    <td>{this.props.location.city}</td>
+    </tr>
+<tr>
+    <th>Region</th>
+    <td>{this.props.location.region_name}</td>
+    </tr>
+<tr>
+    <th>Zip</th>
+    <td>{this.props.location.zip}</td>
+    </tr>
+<tr>
+    <th>Country</th>
+    <td>{this.props.location.country_name}</td>
+    </tr>
+<tr>
+    <th>IP</th>
+    <td>{this.props.location.ip}</td>
+  </tr>
+</tbody> 
+            </table>
     )
 
   
