@@ -42,7 +42,7 @@
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "sequelize": "^5.13.1"
+    "sequelize": "^5.15.1"
   },
   "engines": {
     "node": "10.0"
